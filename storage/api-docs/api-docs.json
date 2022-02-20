@@ -1,0 +1,810 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Business Content API",
+        "description": "",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/applications": {
+            "get": {
+                "tags": [
+                    "Application"
+                ],
+                "summary": "Applications show all or by user id or by startup id",
+                "operationId": "6c3dabe293dd0215cc96b29aa1cb9517",
+                "parameters": [
+                    {
+                        "name": "user_id",
+                        "in": "query",
+                        "description": "User id"
+                    },
+                    {
+                        "name": "startup_id",
+                        "in": "query",
+                        "description": "Startup id"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Dataset"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/application": {
+            "put": {
+                "tags": [
+                    "Application"
+                ],
+                "summary": "Application update",
+                "operationId": "223190a7327fb6efe0f1e70818f8ade9",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Application"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Application"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Application"
+                ],
+                "summary": "Create application",
+                "operationId": "256aa1676f4f685279dc277be175a27b",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Application"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Application"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/application/{id}": {
+            "get": {
+                "tags": [
+                    "Application"
+                ],
+                "summary": "Application get by ID",
+                "operationId": "74b23cfff2f7c78ce98fc756866ff264",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Application id",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Application"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Application"
+                ],
+                "summary": "Delete application",
+                "operationId": "b7483738c7780e3e6c02dc230d016809",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Application id",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/datasets": {
+            "get": {
+                "tags": [
+                    "Dataset"
+                ],
+                "summary": "Datasets show all or by user id",
+                "operationId": "03a25edb34565c70dbac2d4cbb96f1fd",
+                "parameters": [
+                    {
+                        "name": "user_id",
+                        "in": "query",
+                        "description": "User id"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Dataset"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/dataset": {
+            "put": {
+                "tags": [
+                    "Dataset"
+                ],
+                "summary": "Dataset update",
+                "operationId": "9f29a9eb4214f235b0b77f955efa1c3e",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Dataset"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Dataset"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Dataset"
+                ],
+                "summary": "Create dataset",
+                "operationId": "f47ff7909b04edaae7dc24030a98d564",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Dataset"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Dataset"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/dataset/{id}": {
+            "get": {
+                "tags": [
+                    "Dataset"
+                ],
+                "summary": "Get dataset by ID",
+                "operationId": "41252879c96db42cd62010f8ce87f4de",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Dataset id",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Dataset"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Dataset"
+                ],
+                "summary": "Delete dataset",
+                "operationId": "0beaf6bd859a6e67cd33b61d0dba028b",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Dataset id",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/reviews": {
+            "get": {
+                "tags": [
+                    "Review"
+                ],
+                "summary": "Review show all or by user id or by startup id",
+                "operationId": "f6cb6efd5c4ab04cb459652696b15842",
+                "parameters": [
+                    {
+                        "name": "user_id",
+                        "in": "query",
+                        "description": "User id"
+                    },
+                    {
+                        "name": "startup_id",
+                        "in": "query",
+                        "description": "Startup id"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Review"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/review": {
+            "put": {
+                "tags": [
+                    "Review"
+                ],
+                "summary": "Review update",
+                "operationId": "a352015df05765e92bf97c51b18860f5",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Review"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Review"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Review"
+                ],
+                "summary": "Create review",
+                "operationId": "00e0abb5d16d3ff6397998313d8da818",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Review"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Review"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/review/{id}": {
+            "get": {
+                "tags": [
+                    "Review"
+                ],
+                "summary": "Get review by ID",
+                "operationId": "d314d0653db374ce003f3f1082266c2f",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Review id",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Review"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Review"
+                ],
+                "summary": "Delete review",
+                "operationId": "06c8f898c04e10704c33dd482970c6ac",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Review id",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/reward_users": {
+            "get": {
+                "tags": [
+                    "RewardUser"
+                ],
+                "summary": "RewardUser show all or by user id or by reward id",
+                "operationId": "790ae89994c476caa35c1bfc31817c6b",
+                "parameters": [
+                    {
+                        "name": "reward_id",
+                        "in": "query",
+                        "description": "Reward id"
+                    },
+                    {
+                        "name": "user_id",
+                        "in": "query",
+                        "description": "User id"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/RewardUser"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/reward_user": {
+            "put": {
+                "tags": [
+                    "RewardUser"
+                ],
+                "summary": "RewardUser update",
+                "operationId": "9218359d74eb9a8fb277e346400a9266",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/RewardUser"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RewardUser"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "RewardUser"
+                ],
+                "summary": "Create RewardUser",
+                "operationId": "906039273d5c24103b9557d677ea80fc",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/RewardUser"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RewardUser"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Application": {
+                "title": "Application",
+                "description": "Application model",
+                "properties": {
+                    "id": {
+                        "title": "id",
+                        "description": "id",
+                        "type": "integer",
+                        "example": 1
+                    },
+                    "user_id": {
+                        "title": "user_id",
+                        "description": "user_id",
+                        "type": "integer",
+                        "example": 1
+                    },
+                    "startup_id": {
+                        "title": "startup_id",
+                        "description": "startup_id",
+                        "type": "integer",
+                        "example": 1
+                    },
+                    "message": {
+                        "title": "message",
+                        "description": "message",
+                        "type": "string",
+                        "example": "I want to work hard and cry about it"
+                    },
+                    "created_at": {
+                        "title": "created_at",
+                        "description": "created_at",
+                        "type": "string",
+                        "format": "datetime",
+                        "example": "2022-01-22T21:34:30.000000"
+                    },
+                    "updated_at": {
+                        "title": "updated_at",
+                        "description": "updated_at",
+                        "type": "string",
+                        "format": "datetime",
+                        "example": "2022-01-22T21:34:30.000000"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "Application"
+                }
+            },
+            "Dataset": {
+                "title": "Dataset",
+                "description": "Dataset model",
+                "properties": {
+                    "id": {
+                        "title": "id",
+                        "description": "id",
+                        "type": "integer",
+                        "example": 1
+                    },
+                    "user_id": {
+                        "title": "user_id",
+                        "description": "user_id",
+                        "type": "integer",
+                        "example": 1
+                    },
+                    "type": {
+                        "title": "type",
+                        "description": "type",
+                        "type": "string",
+                        "example": "CREATOR"
+                    },
+                    "content": {
+                        "title": "content",
+                        "description": "content",
+                        "type": "string",
+                        "example": "Documents 123"
+                    },
+                    "status": {
+                        "title": "status",
+                        "description": "status",
+                        "type": "string",
+                        "example": "PENDING"
+                    },
+                    "comment": {
+                        "title": "comment",
+                        "description": "comment",
+                        "type": "string",
+                        "example": "Wrong name"
+                    },
+                    "created_at": {
+                        "title": "created_at",
+                        "description": "created_at",
+                        "type": "string",
+                        "format": "datetime",
+                        "example": "2022-01-22T21:34:30.000000"
+                    },
+                    "updated_at": {
+                        "title": "updated_at",
+                        "description": "updated_at",
+                        "type": "string",
+                        "format": "datetime",
+                        "example": "2022-01-22T21:34:30.000000"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "Dataset"
+                }
+            },
+            "Review": {
+                "title": "Review",
+                "description": "Review model",
+                "properties": {
+                    "id": {
+                        "title": "id",
+                        "description": "id",
+                        "type": "integer",
+                        "example": 1
+                    },
+                    "startup_id": {
+                        "title": "startup_id",
+                        "description": "startup_id",
+                        "type": "integer",
+                        "example": 1
+                    },
+                    "user_id": {
+                        "title": "user_id",
+                        "description": "user_id",
+                        "type": "integer",
+                        "example": 1
+                    },
+                    "direction": {
+                        "title": "direction",
+                        "description": "direction (UTOS or STOU)",
+                        "type": "string",
+                        "example": "UTOS"
+                    },
+                    "message": {
+                        "title": "message",
+                        "description": "message",
+                        "type": "string",
+                        "example": "Good work!"
+                    },
+                    "type": {
+                        "title": "type",
+                        "description": "type (POSITIVE or NEGATIVE)",
+                        "type": "string",
+                        "example": "POSITIVE"
+                    },
+                    "created_at": {
+                        "title": "created_at",
+                        "description": "created_at",
+                        "type": "string",
+                        "format": "datetime",
+                        "example": "2022-01-22T21:34:30.000000"
+                    },
+                    "updated_at": {
+                        "title": "updated_at",
+                        "description": "updated_at",
+                        "type": "string",
+                        "format": "datetime",
+                        "example": "2022-01-22T21:34:30.000000"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "Review"
+                }
+            },
+            "RewardUser": {
+                "title": "RewardUser",
+                "description": "RewardUser model",
+                "properties": {
+                    "id": {
+                        "title": "id",
+                        "description": "id",
+                        "type": "integer",
+                        "example": 1
+                    },
+                    "reward_id": {
+                        "title": "reward_id",
+                        "description": "reward_id",
+                        "type": "integer",
+                        "example": 1
+                    },
+                    "user_id": {
+                        "title": "user_id",
+                        "description": "user_id",
+                        "type": "integer",
+                        "example": 1
+                    },
+                    "status": {
+                        "title": "status",
+                        "description": "status (CREATED or SENT or RECIEVED)",
+                        "type": "string",
+                        "example": "CREATED"
+                    },
+                    "destination": {
+                        "title": "destination",
+                        "description": "destination",
+                        "type": "string",
+                        "example": "Wall Street/8/16"
+                    },
+                    "created_at": {
+                        "title": "created_at",
+                        "description": "created_at",
+                        "type": "string",
+                        "format": "datetime",
+                        "example": "2022-01-22T21:34:30.000000"
+                    },
+                    "updated_at": {
+                        "title": "updated_at",
+                        "description": "updated_at",
+                        "type": "string",
+                        "format": "datetime",
+                        "example": "2022-01-22T21:34:30.000000"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "RewardUser"
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Dataset",
+            "description": "API Endpoints of Dataset"
+        }
+    ]
+}
