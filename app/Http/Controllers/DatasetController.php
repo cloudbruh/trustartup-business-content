@@ -10,8 +10,8 @@ class DatasetController extends Controller
     /**
      * @OA\Get(
      *   tags={"Dataset"},
-     *   path="/datasets",
-     *   summary="Datasets show all or by user id",
+     *   path="/dataset",
+     *   summary="Datasets by user id",
      *   @OA\Parameter(
      *      name="user_id",
      *      in="query",

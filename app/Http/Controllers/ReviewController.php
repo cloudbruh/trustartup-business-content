@@ -10,8 +10,8 @@ class ReviewController extends Controller
     /**
      * @OA\Get(
      *   tags={"Review"},
-     *   path="/reviews",
-     *   summary="Review show all or by user id or by startup id",
+     *   path="/review",
+     *   summary="Review by user id and startup id",
      *   @OA\Parameter(
      *      name="user_id",
      *      in="query",

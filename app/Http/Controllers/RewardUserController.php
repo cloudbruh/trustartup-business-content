@@ -10,8 +10,8 @@ class RewardUserController extends Controller
     /**
      * @OA\Get(
      *   tags={"RewardUser"},
-     *   path="/reward_users",
-     *   summary="RewardUser show all or by user id or by reward id",
+     *   path="/reward_user",
+     *   summary="RewardUser by user id and reward id",
      *   @OA\Parameter(
      *      name="reward_id",
      *      in="query",
