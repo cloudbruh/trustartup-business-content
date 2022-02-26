@@ -10,8 +10,8 @@ class ApplicationController extends Controller
     /**
      * @OA\Get(
      *   tags={"Application"},
-     *   path="/applications",
-     *   summary="Applications show all or by user id or by startup id",
+     *   path="/application",
+     *   summary="Applications by user id and startup id",
      *   @OA\Parameter(
      *      name="user_id",
      *      in="query",

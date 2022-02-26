@@ -6,13 +6,13 @@
         "version": "1.0.0"
     },
     "paths": {
-        "/applications": {
+        "/application": {
             "get": {
                 "tags": [
                     "Application"
                 ],
-                "summary": "Applications show all or by user id or by startup id",
-                "operationId": "6c3dabe293dd0215cc96b29aa1cb9517",
+                "summary": "Applications by user id and startup id",
+                "operationId": "69aca11c6f4739bb2f51e0f8ab671322",
                 "parameters": [
                     {
                         "name": "user_id",
@@ -40,9 +40,7 @@
                         }
                     }
                 }
-            }
-        },
-        "/application": {
+            },
             "put": {
                 "tags": [
                     "Application"
@@ -163,13 +161,13 @@
                 }
             }
         },
-        "/datasets": {
+        "/dataset": {
             "get": {
                 "tags": [
                     "Dataset"
                 ],
-                "summary": "Datasets show all or by user id",
-                "operationId": "03a25edb34565c70dbac2d4cbb96f1fd",
+                "summary": "Datasets by user id",
+                "operationId": "1178f4279941e320a5b201a4abae2f72",
                 "parameters": [
                     {
                         "name": "user_id",
@@ -192,9 +190,7 @@
                         }
                     }
                 }
-            }
-        },
-        "/dataset": {
+            },
             "put": {
                 "tags": [
                     "Dataset"
@@ -315,13 +311,13 @@
                 }
             }
         },
-        "/reviews": {
+        "/review": {
             "get": {
                 "tags": [
                     "Review"
                 ],
-                "summary": "Review show all or by user id or by startup id",
-                "operationId": "f6cb6efd5c4ab04cb459652696b15842",
+                "summary": "Review by user id and startup id",
+                "operationId": "77f7f3917bd8776ba24824f3284660ab",
                 "parameters": [
                     {
                         "name": "user_id",
@@ -349,9 +345,7 @@
                         }
                     }
                 }
-            }
-        },
-        "/review": {
+            },
             "put": {
                 "tags": [
                     "Review"
@@ -472,13 +466,13 @@
                 }
             }
         },
-        "/reward_users": {
+        "/reward_user": {
             "get": {
                 "tags": [
                     "RewardUser"
                 ],
-                "summary": "RewardUser show all or by user id or by reward id",
-                "operationId": "790ae89994c476caa35c1bfc31817c6b",
+                "summary": "RewardUser by user id and reward id",
+                "operationId": "72f60205679d79b218274b93f3560a59",
                 "parameters": [
                     {
                         "name": "reward_id",
@@ -506,9 +500,7 @@
                         }
                     }
                 }
-            }
-        },
-        "/reward_user": {
+            },
             "put": {
                 "tags": [
                     "RewardUser"

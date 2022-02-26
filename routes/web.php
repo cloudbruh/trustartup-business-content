@@ -14,28 +14,28 @@
 */
 
 //datasets
-$router->get('datasets', 'DatasetController@show');
+$router->get('dataset', 'DatasetController@show');
 $router->get('dataset/{id}', 'DatasetController@get');
 $router->delete('dataset/{id}', 'DatasetController@delete');
 $router->put('dataset', 'DatasetController@update');
 $router->post('dataset', 'DatasetController@create');
 
 //applications
-$router->get('applications', 'ApplicationController@show');
+$router->get('application', 'ApplicationController@show');
 $router->get('application/{id}', 'ApplicationController@get');
 $router->delete('application/{id}', 'ApplicationController@delete');
 $router->put('application', 'ApplicationController@update');
 $router->post('application', 'ApplicationController@create');
 
 //reviews
-$router->get('reviews', 'ReviewController@show');
+$router->get('review', 'ReviewController@show');
 $router->get('review/{id}', 'ReviewController@get');
 $router->delete('review/{id}', 'ReviewController@delete');
 $router->put('review', 'ReviewController@update');
 $router->post('review', 'ReviewController@create');
 
 //reward_user
-$router->get('reward_users', 'RewardUserController@show');
+$router->get('reward_user', 'RewardUserController@show');
 //$router->get('reward_user/{id}', 'RewardUserController@get');
 //$router->delete('review/{id}', 'RewardUserController@delete');
 $router->put('reward_user', 'RewardUserController@update');
