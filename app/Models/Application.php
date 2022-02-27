@@ -61,6 +61,17 @@ class Application extends Model
 
     /**
      * @OA\Property(
+     *     title="status",
+     *     description="status (CREATED or APPLIED or FIRED)",
+     *     example="CREATED"
+     * )
+     * @var string
+     */
+
+    private $status;
+
+    /**
+     * @OA\Property(
      *     title="created_at",
      *     description="created_at",
      *     example="2022-01-22T21:34:30.000000",
@@ -82,6 +93,6 @@ class Application extends Model
     private $updated_at;
 
     protected $fillable = [
-        'user_id', 'startup_id', 'message'
+        'user_id', 'startup_id', 'message', 'status'
     ];
 }

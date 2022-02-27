@@ -18,6 +18,7 @@ class CreateApplicationsTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->integer('startup_id')->unsigned();
             $table->text('message');
+            $table->enum('status', ['CREATED', 'APPLIED', 'FIRED']);
             $table->timestamps();
         });
     }

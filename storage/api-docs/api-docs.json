@@ -597,6 +597,12 @@
                         "type": "string",
                         "example": "I want to work hard and cry about it"
                     },
+                    "status": {
+                        "title": "status",
+                        "description": "status (CREATED or APPLIED or FIRED)",
+                        "type": "string",
+                        "example": "CREATED"
+                    },
                     "created_at": {
                         "title": "created_at",
                         "description": "created_at",

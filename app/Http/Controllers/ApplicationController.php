@@ -116,6 +116,7 @@ class ApplicationController extends Controller
             'user_id' => $request->user_id,
             'startup_id' => $request->startup_id,
             'message' => $request->message,
+            'status' => $request->status ? $request->status : 'CREATED',
         ]);
         return response()->json($application, 201);
     }
