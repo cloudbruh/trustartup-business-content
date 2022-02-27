@@ -19,7 +19,7 @@ class CreateDatasetsTable extends Migration
             $table->enum('type', ['CREATOR', 'APPLICANT']);
             $table->text('content');
             $table->enum('status', ['CREATED', 'PENDING', 'VALIDATED', 'DENIED'])->default('CREATED');
-            $table->string('comment')->nullable();
+            $table->text('comment')->nullable();
             $table->timestamps();
         });
     }
