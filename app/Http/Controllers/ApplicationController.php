@@ -22,6 +22,11 @@ class ApplicationController extends Controller
      *      in="query",
      *      description="Startup id",
      *   ),
+     *   @OA\Parameter(
+     *      name="status",
+     *      in="query",
+     *      description="Status",
+     *   ),
      *   @OA\Response(
      *     response=200,
      *     description="OK",
@@ -42,6 +47,8 @@ class ApplicationController extends Controller
             $query = $query->where('user_id', $request->user_id);
         if ($request->startup_id)
             $query = $query->where('startup_id', $request->startup_id);
+        if ($request->status)
+            $query = $query->where('status', $request->status);
         return response()->json($query->get());
     }
 

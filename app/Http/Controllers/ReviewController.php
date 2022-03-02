@@ -22,6 +22,11 @@ class ReviewController extends Controller
      *      in="query",
      *      description="Startup id",
      *   ),
+     *   @OA\Parameter(
+     *      name="direction",
+     *      in="query",
+     *      description="Direction",
+     *   ),
      *   @OA\Response(
      *     response=200,
      *     description="OK",
@@ -42,6 +47,8 @@ class ReviewController extends Controller
             $query = $query->where('user_id', $request->user_id);
         if ($request->startup_id)
             $query = $query->where('startup_id', $request->startup_id);
+        if ($request->direction)
+            $query = $query->where('direction', $request->direction);
         return response()->json($query->get());
     }
 

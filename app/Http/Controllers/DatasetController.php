@@ -17,6 +17,11 @@ class DatasetController extends Controller
      *      in="query",
      *      description="User id",
      *   ),
+     *   @OA\Parameter(
+     *      name="status",
+     *      in="query",
+     *      description="Status",
+     *   ),
      *   @OA\Response(
      *     response=200,
      *     description="OK",
@@ -35,6 +40,8 @@ class DatasetController extends Controller
         $query = Dataset::query();
         if ($request->user_id)
             $query = $query->where('user_id', $request->user_id);
+        if ($request->status)
+            $query = $query->where('status', $request->status);
         return response()->json($query->get());
     }
 

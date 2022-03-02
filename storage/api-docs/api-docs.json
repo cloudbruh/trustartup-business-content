@@ -23,6 +23,11 @@
                         "name": "startup_id",
                         "in": "query",
                         "description": "Startup id"
+                    },
+                    {
+                        "name": "status",
+                        "in": "query",
+                        "description": "Status"
                     }
                 ],
                 "responses": {
@@ -173,6 +178,11 @@
                         "name": "user_id",
                         "in": "query",
                         "description": "User id"
+                    },
+                    {
+                        "name": "status",
+                        "in": "query",
+                        "description": "Status"
                     }
                 ],
                 "responses": {
@@ -328,6 +338,11 @@
                         "name": "startup_id",
                         "in": "query",
                         "description": "Startup id"
+                    },
+                    {
+                        "name": "direction",
+                        "in": "query",
+                        "description": "Direction"
                     }
                 ],
                 "responses": {
