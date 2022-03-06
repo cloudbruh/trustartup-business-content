@@ -15,10 +15,10 @@ class CreateDatasetsTable extends Migration
     {
         Schema::create('datasets', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id')->unsigned();
-            $table->enum('type', ['CREATOR', 'APPLICANT']);
+            $table->integer('moderatable_id')->unsigned();
+            $table->enum('moderatable_type', ['ROLE_CREATOR', 'ROLE_APPLICANT', 'STARTUP']);
             $table->text('content');
-            $table->enum('status', ['CREATED', 'PENDING', 'VALIDATED', 'DENIED'])->default('CREATED');
+            $table->enum('status', ['CREATED', 'PENDING', 'GRANTED', 'PROHIBITED'])->default('CREATED');
             $table->text('comment')->nullable();
             $table->timestamps();
         });

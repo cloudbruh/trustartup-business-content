@@ -29,25 +29,25 @@ class Dataset extends Model
 
     /**
      * @OA\Property(
-     *     title="user_id",
-     *     description="user_id",
+     *     title="moderatable_id",
+     *     description="moderatable_id",
      *     example=1
      * )
      * @var integer
      */
 
-    private $user_id;
+    private $moderatable_id;
 
     /**
      * @OA\Property(
-     *     title="type",
-     *     description="type",
-     *     example="CREATOR"
+     *     title="moderatable_type",
+     *     description="one of ROLE_CREATOR, ROLE_APPLICANT, STARTUP",
+     *     example="ROLE_CREATOR"
      * )
      * @var string
      */
 
-    private $type;
+    private $moderatable_type;
 
     /**
      * @OA\Property(
@@ -64,7 +64,7 @@ class Dataset extends Model
      * @OA\Property(
      *     title="status",
      *     description="status",
-     *     example="PENDING"
+     *     example="CREATED"
      * )
      * @var string
      */
@@ -105,6 +105,6 @@ class Dataset extends Model
     private $updated_at;
 
     protected $fillable = [
-        'user_id', 'type', 'content', 'status', 'comment'
+        'moderatable_id', 'moderatable_type', 'content', 'status', 'comment'
     ];
 }

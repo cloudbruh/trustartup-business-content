@@ -11,11 +11,16 @@ class DatasetController extends Controller
      * @OA\Get(
      *   tags={"Dataset"},
      *   path="/dataset",
-     *   summary="Datasets by user id",
+     *   summary="Datasets",
      *   @OA\Parameter(
-     *      name="user_id",
+     *      name="moderatable_id",
      *      in="query",
-     *      description="User id",
+     *      description="Moderatable id",
+     *   ),
+     *   @OA\Parameter(
+     *      name="moderatable_type",
+     *      in="query",
+     *      description="Moderatable type",
      *   ),
      *   @OA\Parameter(
      *      name="status",
@@ -38,8 +43,10 @@ class DatasetController extends Controller
     public function show(Request $request)
     {
         $query = Dataset::query();
-        if ($request->user_id)
-            $query = $query->where('user_id', $request->user_id);
+        if ($request->moderatable_id)
+            $query = $query->where('moderatable_id', $request->moderatable_id);
+        if ($request->moderatable_type)
+            $query = $query->where('moderatable_type', $request->moderatable_type);
         if ($request->status)
             $query = $query->where('status', $request->status);
         return response()->json($query->get());
@@ -114,9 +121,9 @@ class DatasetController extends Controller
     public function create(Request $request)
     {
         $dataset = Dataset::create([
-            'type' => $request->type,
+            'moderatable_type' => $request->moderatable_type,
             'content' => $request->content,
-            'user_id' => $request->user_id,
+            'moderatable_id' => $request->moderatable_id,
         ]);
         return response()->json($dataset, 201);
     }
