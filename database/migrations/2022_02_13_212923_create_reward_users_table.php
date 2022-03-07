@@ -17,7 +17,7 @@ class CreateRewardUsersTable extends Migration
             $table->id();
             $table->integer('reward_id')->unsigned();
             $table->integer('user_id')->unsigned();
-            $table->enum('status', ['CREATED', 'SENT', 'RECIEVED']);
+            $table->enum('status', ['CREATED', 'SENT', 'RECIEVED'])->default('CREATED');
             $table->text('destination');
             $table->timestamps();
         });
