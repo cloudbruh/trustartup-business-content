@@ -1,17 +1,17 @@
-services: 
+services:
   business-content:
     build: .
-    environment: 
+    environment:
       - APP_ENV=production
       - APP_KEY=yIcTghI5UqQY6z3IjTCupEbHMYPH73gJ
-      - APP_DEBUG=true
+      - APP_DEBUG=false
       - DB_CONNECTION=pgsql
       - DB_HOST=business-content-db
       - DB_PORT=5432
       - DB_DATABASE=postgres
       - DB_USERNAME=postgres
       - DB_PASSWORD=postgres
-    command: ["/bin/sh", "-c", "sleep 10 && php artisan migrate --force && /docker-entrypoint.sh"]
+    command: ["/bin/sh", "-c", "php artisan migrate --force && /docker-entrypoint.sh"]
     ports:
       - "8086:80"
     depends_on:
@@ -22,5 +22,5 @@ services:
       - POSTGRES_PASSWORD=postgres
     volumes:
       - business-content-db:/var/lib/postgresql/data
-volumes: 
+volumes:
   business-content-db:
