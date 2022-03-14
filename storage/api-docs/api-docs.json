@@ -653,6 +653,12 @@
                         "type": "integer",
                         "example": 1
                     },
+                    "user_id": {
+                        "title": "user_id",
+                        "description": "user_id",
+                        "type": "integer",
+                        "example": 1
+                    },
                     "moderatable_id": {
                         "title": "moderatable_id",
                         "description": "moderatable_id",

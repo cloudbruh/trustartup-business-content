@@ -15,6 +15,7 @@ class CreateDatasetsTable extends Migration
     {
         Schema::create('datasets', function (Blueprint $table) {
             $table->id();
+            $table->integer('user_id')->unsigned();
             $table->integer('moderatable_id')->unsigned();
             $table->enum('moderatable_type', ['ROLE_CREATOR', 'ROLE_APPLICANT', 'STARTUP']);
             $table->text('content');

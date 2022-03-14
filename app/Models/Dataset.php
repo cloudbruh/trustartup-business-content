@@ -29,6 +29,17 @@ class Dataset extends Model
 
     /**
      * @OA\Property(
+     *     title="user_id",
+     *     description="user_id",
+     *     example=1
+     * )
+     * @var integer
+     */
+
+    private $user_id;
+
+    /**
+     * @OA\Property(
      *     title="moderatable_id",
      *     description="moderatable_id",
      *     example=1
@@ -105,6 +116,6 @@ class Dataset extends Model
     private $updated_at;
 
     protected $fillable = [
-        'moderatable_id', 'moderatable_type', 'content', 'status', 'comment'
+        'user_id', 'moderatable_id', 'moderatable_type', 'content', 'status', 'comment'
     ];
 }

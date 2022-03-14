@@ -47,6 +47,8 @@ class DatasetController extends Controller
             $query = $query->where('moderatable_id', $request->moderatable_id);
         if ($request->moderatable_type)
             $query = $query->where('moderatable_type', $request->moderatable_type);
+        if ($request->user_id)
+            $query = $query->where('user_id', $request->user_id);
         if ($request->status)
             $query = $query->where('status', $request->status);
         return response()->json($query->get());
@@ -124,6 +126,7 @@ class DatasetController extends Controller
             'moderatable_type' => $request->moderatable_type,
             'content' => $request->content,
             'moderatable_id' => $request->moderatable_id,
+            'user_id' => $request->user_id,
         ]);
         return response()->json($dataset, 201);
     }
